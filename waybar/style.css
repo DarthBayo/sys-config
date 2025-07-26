@@ -44,6 +44,13 @@ window#waybar {
 }
 
 /* Center */
+#taskbar button {
+  color: @white;
+  opacity: 0.5;
+}
+#taskbar button.active {
+  opacity: 1;
+}
 #taskbar button:hover {
   opacity: 0.8;
   border-color: @white;
