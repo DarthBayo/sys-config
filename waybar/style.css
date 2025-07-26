@@ -1,52 +1,50 @@
+@define-color workspace_background rgba(0, 0, 0, 0);
+@define-color module_left_background rgba(26, 27, 35, 0.8);
+@define-color module_center_background rgba(26, 27, 35, 0.8);
+@define-color module_right_background rgba(26, 27, 35, 0.8);
+
+@define-color white rgba(255, 255, 242, 1);
+
 * {
-    font-family: JetBrainsMono;
-    font-size: 13px;
-    min-height: 0;
-    color: white;
+  font-family: "monospace";
+  font-weight: 500;
+  color: @white;
+  border-radius: 4px;
 }
 
 window#waybar {
-    background-color: transparent;
+  background-color: @workspace_background;
 }
 
-#workspaces {
-    margin-top: 3px;
-    margin-bottom: 2px;
-    margin-right: 10px;
-    margin-left: 25px;
+.modules-left {
+  background-color: @module_left_background;
+  margin: 6px 0 0 6px;
+}
+.modules-center {
+  background-color: @module_center_background;
+  margin: 6px 0 0 0;
+}
+.modules-right {
+  background-color: @module_right_background;
+  margin: 6px 6px 0 0;
+  padding: 0 6px;
 }
 
+/* Left */
 #workspaces button {
-    border-radius: 15px;
-    margin-right: 10px;
-    padding: 1px 10px;
-    font-weight: bolder;
-    background-color: #181818;
+  color: @white;
+  opacity: 0.2;
+}
+#workspaces button.active {
+  opacity: 1;
+}
+#workspaces button:hover {
+  opacity: 0.6;
+  border-color: @white;
 }
 
-#workspaces button.active,
-#workspaces button.focused {
-    padding: 0 22px;
-    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-    background: #7C9D96;
-}
-
-#tray,
-#mpd,
-#custom-weather,
-#cpu,
-#temperature,
-#memory,
-#sway-mode,
-#backlight,
-#pulseaudio,
-#custom-vpn,
-#disk,
-#custom-recorder,
-#custom-audiorec,
-#battery,
-#clock,
-#idle_inhibitor,
-#network {
-    padding: 0 10px;
+/* Center */
+#taskbar button:hover {
+  opacity: 0.8;
+  border-color: @white;
 }
